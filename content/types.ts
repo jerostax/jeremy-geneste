@@ -60,6 +60,8 @@ export type Content = {
     description: string;
     jobTitle: string;
     ogTagline: string;
+    // Short description for link previews (Open Graph, Twitter); `description` stays the search engine one.
+    shareDescription: string;
   };
   sidebar: {
     role: string;
