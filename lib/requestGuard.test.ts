@@ -3,8 +3,8 @@ import { test } from "node:test";
 import { checkRequestShape } from "./requestGuard";
 
 const sameSite = {
-  origin: "https://jeremy-geneste.vercel.app",
-  host: "jeremy-geneste.vercel.app",
+  origin: "https://jeremy-geneste.com",
+  host: "jeremy-geneste.com",
   contentType: "application/json",
   contentLength: "120",
 };
@@ -21,7 +21,7 @@ test("rejects another origin, a missing origin or a malformed one", () => {
 });
 
 test("rejects a look-alike host", () => {
-  assert.equal(checkRequestShape({ ...sameSite, origin: "https://jeremy-geneste.vercel.app.evil.example" }), "cross_origin");
+  assert.equal(checkRequestShape({ ...sameSite, origin: "https://jeremy-geneste.com.evil.example" }), "cross_origin");
 });
 
 test("rejects non-JSON bodies and oversized payloads", () => {

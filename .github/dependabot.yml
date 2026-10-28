@@ -1,14 +1,26 @@
 version: 2
 updates:
+  # One weekly PR for all minor and patch npm updates; majors still come one by one.
   - package-ecosystem: npm
     directory: /
     schedule:
       interval: weekly
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 3
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+    ignore:
+      # Bumped by hand: TypeScript majors must be supported by Next.js,
+      # and @types/node follows the Node.js runtime (24), not the latest release.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
+      - dependency-name: "@types/node"
+        update-types: [version-update:semver-major]
+  # One monthly PR for all GitHub Actions updates.
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
