@@ -77,7 +77,6 @@ export const fr: Content = {
     label: "Profil d’altitude réel de Chamonix au sommet du Mont Blanc, avec les étapes de mon parcours",
     start: "Chamonix, 1 035 m",
     end: "Mont Blanc, 4 806 m",
-    caption: "Mon parcours sur le vrai profil Chamonix → Mont Blanc",
     milestones: [
       { at: 0.02, label: "École, 2018", target: "ecole-multimedia" },
       { at: 0.12, label: "Pop Eye, 2019", target: "pop-eye" },
