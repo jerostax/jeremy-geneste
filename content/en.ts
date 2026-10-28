@@ -88,7 +88,7 @@ export const en: Content = {
   },
   outside: {
     heading: "Outside of code",
-    text: "My family is from Chamonix and I have a strong bond with Mauritius. Outside of code, I climb: in the Alps, on Réunion Island and in Mauritius.",
+    text: "Chamonix for family, Mauritius for the heart, and climbing wherever there’s rock: the Alps, Réunion Island, Mauritius.",
     photoAlt: "Jérémy Geneste climbing a granite needle in the Mont Blanc massif",
   },
   projects: [
