@@ -5,6 +5,9 @@ export const locales: Locale[] = ["fr", "en"];
 // Custom domain; the other domains and jeremy-geneste.vercel.app redirect here (308, set in Vercel).
 export const siteUrl = "https://jeremy-geneste.com";
 
+// First publication of the site, for the ProfilePage structured data.
+export const siteCreated = "2026-10-28";
+
 export const person = {
   name: "Jérémy Geneste",
   alternateName: "Jeremy Geneste",

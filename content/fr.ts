@@ -4,7 +4,7 @@ export const fr: Content = {
   meta: {
     title: "Jérémy Geneste, développeur fullstack JavaScript et IA",
     description:
-      "Jérémy Geneste, développeur fullstack JavaScript / TypeScript depuis 2019, en recherche d’un CDI à Paris ou en Île-de-France. Applications web de bout en bout en React, Next.js et Node.js, avec l’IA là où elle sert vraiment.",
+      "Jérémy Geneste, développeur fullstack JavaScript / TypeScript depuis 2019. Recherche un CDI à Paris / IDF. React, Next.js, Node.js et IA.",
     jobTitle: "Développeur fullstack JavaScript et IA",
     ogTagline: "Développeur fullstack JavaScript / TypeScript et IA",
     shareDescription: "Portfolio de Jérémy Geneste, développeur fullstack JavaScript / TypeScript et IA, en recherche d’un CDI à Paris : applications web en React, Next.js et Node.js.",

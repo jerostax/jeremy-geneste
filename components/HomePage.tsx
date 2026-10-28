@@ -55,7 +55,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
       <div className="mx-auto grid max-w-[1240px] gap-9 px-4 py-6 sm:px-10 sm:py-10 lg:grid-cols-[300px_1fr] lg:gap-[72px]">
         <aside className="self-start lg:sticky lg:top-10">
-          <Image src={person.photo} alt={t.sidebar.photoAlt} width={336} height={336} preload
+          <Image src={person.photo} alt={t.sidebar.photoAlt} width={168} height={168} preload
             className="enter size-[168px] rounded-full object-cover object-[50%_28%]" style={{ "--i": 0 } as React.CSSProperties} />
           <h1 className="enter mt-5.5 font-display text-4xl font-semibold tracking-[-0.02em]" style={{ "--i": 1 } as React.CSSProperties}>
             {person.name}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { Content } from "@/content/types";
-import { absoluteUrl, localePath, person, siteUrl, type Locale } from "./site";
+import { absoluteUrl, localePath, person, siteCreated, siteUrl, type Locale } from "./site";
 
 const ogLocale: Record<Locale, string> = { fr: "fr_FR", en: "en_US" };
 
@@ -39,14 +39,25 @@ export function buildMetadata(locale: Locale, content: Content): Metadata {
   };
 }
 
+// The WebSite node gives Google the site name shown in results ("Jérémy Geneste",
+// not the domain used as og:site_name for link cards).
 export function buildPersonJsonLd(locale: Locale, content: Content) {
-  return {
-    "@context": "https://schema.org",
+  const website = {
+    "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
+    url: absoluteUrl("/"),
+    name: person.name,
+    alternateName: [person.alternateName, new URL(siteUrl).host],
+    inLanguage: ["fr", "en"],
+  };
+  const profilePage = {
     "@type": "ProfilePage",
     "@id": `${absoluteUrl(localePath[locale])}#page`,
     url: absoluteUrl(localePath[locale]),
     inLanguage: locale,
     name: content.meta.title,
+    isPartOf: { "@id": website["@id"] },
+    dateCreated: siteCreated,
     mainEntity: {
       "@type": "Person",
       // One identity shared by both language versions.
@@ -57,7 +68,7 @@ export function buildPersonJsonLd(locale: Locale, content: Content) {
       familyName: "Geneste",
       jobTitle: content.meta.jobTitle,
       description: content.meta.description,
-      url: siteUrl,
+      url: absoluteUrl("/"),
       image: absoluteUrl(person.photo),
       email: `mailto:${person.email}`,
       address: {
@@ -66,11 +77,12 @@ export function buildPersonJsonLd(locale: Locale, content: Content) {
         addressCountry: "FR",
       },
       knowsLanguage: ["fr", "en"],
-      knowsAbout: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Technical SEO", "Web performance"],
+      knowsAbout: ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Artificial intelligence", "PostgreSQL", "Technical SEO", "Web performance"],
       alumniOf: { "@type": "EducationalOrganization", name: "L’École Multimédia" },
       sameAs: Object.values(person.links),
     },
   };
+  return { "@context": "https://schema.org", "@graph": [website, profilePage] as const };
 }
 
 // JSON.stringify does not escape "<": a "</script>" in a string would end the tag.
