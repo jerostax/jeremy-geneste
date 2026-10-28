@@ -4,12 +4,13 @@ export const fr: Content = {
   meta: {
     title: "Jérémy Geneste, développeur fullstack JavaScript et IA",
     description:
-      "Jérémy Geneste, développeur fullstack JavaScript depuis 2019 en Île-de-France. Applications web de bout en bout en React, Next.js et Node.js, avec l’IA là où elle sert vraiment.",
+      "Jérémy Geneste, développeur fullstack JavaScript / TypeScript depuis 2019, en recherche d’un CDI à Paris ou en Île-de-France. Applications web de bout en bout en React, Next.js et Node.js, avec l’IA là où elle sert vraiment.",
     jobTitle: "Développeur fullstack JavaScript et IA",
     ogTagline: "Développeur fullstack JavaScript et IA",
   },
   sidebar: {
     role: "Développeur fullstack JavaScript et IA",
+    status: "En recherche d’un CDI à Paris",
     facts: ["Île-de-France", "Développeur depuis 2019", "Français, anglais professionnel"],
     nav: { parcours: "Parcours", projects: "Projets", skills: "Compétences", contact: "Contact" },
     navLabel: "Sections de la page",
@@ -20,7 +21,7 @@ export const fr: Content = {
     photoAlt: "Portrait de Jérémy Geneste",
   },
   lead: "Je conçois des applications web de bout en bout, et j’y intègre l’IA là où elle sert vraiment.",
-  now: "En ce moment : freelance pour Delange Immobilier, et un SaaS de création de sites par IA. Ouvert à un poste ou une mission, en français ou en anglais.",
+  now: "Je recherche un CDI fullstack JavaScript / TypeScript à Paris ou en Île-de-France, en français ou en anglais. En parallèle, je travaille en freelance pour Delange Immobilier et je développe un SaaS de création de sites par IA.",
   numberLocale: "fr-FR",
   sections: {
     parcours: "Parcours",
@@ -95,7 +96,7 @@ export const fr: Content = {
     {
       title: "Développement assisté par IA",
       context: "Projet personnel",
-      text: "Mon environnement Claude Code : agents d’audit de sécurité et de référencement, contrôles automatiques avant chaque pull request, garde-fous sur Git et sur les secrets. L’IA propose, je valide.",
+      text: "Mon environnement Claude Code : agents d’audit de sécurité et de référencement, une checklist outillée exécutée avant les pull requests, garde-fous sur Git et sur les secrets. L’IA propose, je valide.",
       stack: "Claude Code, Python, MCP",
     },
   ],
@@ -105,7 +106,7 @@ export const fr: Content = {
     { label: "Cloud et outils", items: "Git, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
   ],
   contact: {
-    heading: "Un poste, une mission, une application à reprendre ? Écrivez-moi.",
+    heading: "Vous recrutez en CDI, ou vous avez besoin d’aide sur un projet ? Écrivez-moi.",
     form: {
       name: "Nom",
       email: "E-mail",

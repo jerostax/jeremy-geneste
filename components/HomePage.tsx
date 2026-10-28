@@ -61,6 +61,10 @@ export function HomePage({ locale }: { locale: Locale }) {
             {person.name}
           </h1>
           <p className="enter mt-1.5 text-[17px] text-muted" style={{ "--i": 2 } as React.CSSProperties}>{t.sidebar.role}</p>
+          <p className="enter mt-3 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[14px] font-medium text-paper" style={{ "--i": 2 } as React.CSSProperties}>
+            <span aria-hidden className="size-2 rounded-full bg-accent" />
+            {t.sidebar.status}
+          </p>
           <ul className="enter mt-5 text-[15px] leading-[1.9] text-soft" style={{ "--i": 3 } as React.CSSProperties}>
             {t.sidebar.facts.map((fact) => <li key={fact}>{fact}</li>)}
           </ul>

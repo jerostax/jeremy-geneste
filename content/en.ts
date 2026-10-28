@@ -4,12 +4,13 @@ export const en: Content = {
   meta: {
     title: "Jérémy Geneste, full-stack JavaScript and AI developer",
     description:
-      "Jérémy Geneste, full-stack JavaScript developer since 2019, based in Paris, France. End-to-end web applications with React, Next.js and Node.js, with AI where it actually helps.",
+      "Jérémy Geneste, full-stack JavaScript / TypeScript developer since 2019, looking for a permanent role in Paris, France. End-to-end web applications with React, Next.js and Node.js, with AI where it actually helps.",
     jobTitle: "Full-stack JavaScript and AI developer",
     ogTagline: "Full-stack JavaScript and AI developer",
   },
   sidebar: {
     role: "Full-stack JavaScript and AI developer",
+    status: "Looking for a permanent role in Paris",
     facts: ["Paris area, France", "Developer since 2019", "French, professional English"],
     nav: { parcours: "Experience", projects: "Projects", skills: "Skills", contact: "Contact" },
     navLabel: "Page sections",
@@ -20,7 +21,7 @@ export const en: Content = {
     photoAlt: "Portrait of Jérémy Geneste",
   },
   lead: "I build web applications end to end, and bring in AI where it actually helps.",
-  now: "Right now: freelancing for Delange Immobilier, and building an AI website generation SaaS. Open to a role or a contract, in French or in English.",
+  now: "I’m looking for a permanent full-stack JavaScript / TypeScript role in Paris or the Île-de-France region, in French or in English. Meanwhile, I freelance for Delange Immobilier and build an AI website generation SaaS.",
   numberLocale: "en-US",
   sections: {
     parcours: "Experience",
@@ -95,7 +96,7 @@ export const en: Content = {
     {
       title: "AI-assisted development",
       context: "Personal project",
-      text: "My Claude Code setup: security and SEO auditing agents, automated checks before every pull request, safeguards on Git and secrets. The AI proposes, I approve.",
+      text: "My Claude Code setup: security and SEO auditing agents, a tooled checklist I run before pull requests, safeguards on Git and secrets. The AI proposes, I approve.",
       stack: "Claude Code, Python, MCP",
     },
   ],
@@ -105,7 +106,7 @@ export const en: Content = {
     { label: "Cloud and tools", items: "Git, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
   ],
   contact: {
-    heading: "A role, a contract, an application to take over? Drop me a line.",
+    heading: "Hiring for a permanent role, or need help on a project? Drop me a line.",
     form: {
       name: "Name",
       email: "Email",

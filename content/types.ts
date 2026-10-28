@@ -63,6 +63,8 @@ export type Content = {
   };
   sidebar: {
     role: string;
+    // What I am looking for: shown first, right under the job title.
+    status: string;
     facts: string[];
     nav: { parcours: string; projects: string; skills: string; contact: string };
     navLabel: string;
