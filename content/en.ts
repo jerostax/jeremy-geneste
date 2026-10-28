@@ -77,7 +77,6 @@ export const en: Content = {
     label: "Real elevation profile from Chamonix to the Mont Blanc summit, with the steps of my career",
     start: "Chamonix, 1,035 m",
     end: "Mont Blanc, 4,806 m",
-    caption: "My career on the real Chamonix → Mont Blanc profile",
     milestones: [
       { at: 0.02, label: "School, 2018", target: "ecole-multimedia" },
       { at: 0.12, label: "Pop Eye, 2019", target: "pop-eye" },

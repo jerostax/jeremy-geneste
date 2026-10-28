@@ -93,8 +93,6 @@ export type Content = {
     label: string;
     start: string;
     end: string;
-    // Short legend above the profile: what the curve means.
-    caption: string;
     // Fraction of the route (0 = Chamonix, 1 = summit) where each step sits;
     // `target` is the id of a timeline entry, or of a page section.
     milestones: { at: number; label: string; target: string }[];
