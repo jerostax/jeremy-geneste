@@ -2,8 +2,8 @@ export type Locale = "fr" | "en";
 
 export const locales: Locale[] = ["fr", "en"];
 
-// Change this when a custom domain is added (keep a 301 from the old one).
-export const siteUrl = "https://jeremy-geneste.vercel.app";
+// Custom domain; the other domains and jeremy-geneste.vercel.app redirect here (308, set in Vercel).
+export const siteUrl = "https://jeremy-geneste.com";
 
 export const person = {
   name: "Jérémy Geneste",
