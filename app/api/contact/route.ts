@@ -1,7 +1,10 @@
+import { checkBotId } from "botid/server";
 import { buildContactEmail, isSpam, parseContactInput, validateContact } from "@/lib/contact";
 import { createRateLimiter } from "@/lib/rateLimit";
+import { checkRequestShape, guardStatus, maxBodyBytes } from "@/lib/requestGuard";
 import { person } from "@/lib/site";
 
+// Last line of defense: per instance only. The shared limit is a Vercel Firewall rule.
 const allow = createRateLimiter(5, 60 * 60 * 1000);
 
 export async function POST(request: Request) {
@@ -10,9 +13,29 @@ export async function POST(request: Request) {
     return Response.json({ error: "rate_limited" }, { status: 429 });
   }
 
+  const guardError = checkRequestShape({
+    origin: request.headers.get("origin"),
+    host: request.headers.get("host"),
+    contentType: request.headers.get("content-type"),
+    contentLength: request.headers.get("content-length"),
+  });
+  if (guardError) {
+    return Response.json({ error: guardError }, { status: guardStatus[guardError] });
+  }
+
+  const verification = await checkBotId();
+  if (verification.isBot) {
+    return Response.json({ error: "bot" }, { status: 403 });
+  }
+
+  // Content-Length can be absent (chunked body): measure what was actually received.
+  const raw = await request.text();
+  if (new TextEncoder().encode(raw).length > maxBodyBytes) {
+    return Response.json({ error: "too_large" }, { status: 413 });
+  }
   let body: unknown;
   try {
-    body = await request.json();
+    body = JSON.parse(raw);
   } catch {
     return Response.json({ error: "invalid", fields: [] }, { status: 400 });
   }
