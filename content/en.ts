@@ -26,6 +26,7 @@ export const en: Content = {
     parcours: "Experience",
     projects: "Ongoing projects",
     skills: "Skills",
+    outside: "Outside of code",
     contact: "Contact",
   },
   timeline: [
@@ -66,6 +67,24 @@ export const en: Content = {
       role: "RNCP Level II certification, with jury honors",
     },
   ],
+  ascent: {
+    label: "Real elevation profile from Chamonix to the Mont Blanc summit, with the steps of my career",
+    start: "Chamonix, 1,035 m",
+    end: "Mont Blanc, 4,806 m",
+    source: "Real profile, Chamonix → Mont Blanc (SRTM data)",
+    milestones: [
+      { at: 0.02, label: "School, 2018" },
+      { at: 0.12, label: "Pop Eye, 2019" },
+      { at: 0.36, label: "Atos / Eviden, 2019–2024" },
+      { at: 0.78, label: "Delange, 2026" },
+      { at: 1, label: "What’s next?" },
+    ],
+  },
+  outside: {
+    heading: "Outside of code",
+    text: "My family is from Chamonix and I have a strong bond with Mauritius. Outside of code, I climb: in the Alps, on Réunion Island and in Mauritius.",
+    photoAlt: "Jérémy Geneste climbing a granite needle in the Mont Blanc massif",
+  },
   projects: [
     {
       title: "AI website generation SaaS",

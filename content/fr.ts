@@ -26,6 +26,7 @@ export const fr: Content = {
     parcours: "Parcours",
     projects: "Projets en cours",
     skills: "Compétences",
+    outside: "En dehors du code",
     contact: "Contact",
   },
   timeline: [
@@ -66,6 +67,24 @@ export const fr: Content = {
       role: "Certification RNCP niveau II, mention excellence du jury",
     },
   ],
+  ascent: {
+    label: "Profil d’altitude réel de Chamonix au sommet du Mont Blanc, avec les étapes de mon parcours",
+    start: "Chamonix, 1 035 m",
+    end: "Mont Blanc, 4 806 m",
+    source: "Profil réel Chamonix → Mont Blanc (données SRTM)",
+    milestones: [
+      { at: 0.02, label: "École, 2018" },
+      { at: 0.12, label: "Pop Eye, 2019" },
+      { at: 0.36, label: "Atos / Eviden, 2019–2024" },
+      { at: 0.78, label: "Delange, 2026" },
+      { at: 1, label: "La suite ?" },
+    ],
+  },
+  outside: {
+    heading: "En dehors du code",
+    text: "Ma famille est de Chamonix et je suis très attaché à l’île Maurice. En dehors du code, je grimpe : dans les Alpes, à la Réunion, à Maurice.",
+    photoAlt: "Jérémy Geneste en escalade sur une aiguille de granit, dans le massif du Mont-Blanc",
+  },
   projects: [
     {
       title: "SaaS de création de sites par IA",

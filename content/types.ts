@@ -79,9 +79,23 @@ export type Content = {
     parcours: string;
     projects: string;
     skills: string;
+    outside: string;
     contact: string;
   };
   timeline: TimelineEntry[];
+  ascent: {
+    label: string;
+    start: string;
+    end: string;
+    source: string;
+    // Fraction of the route (0 = Chamonix, 1 = summit) where each step sits.
+    milestones: { at: number; label: string }[];
+  };
+  outside: {
+    heading: string;
+    text: string;
+    photoAlt: string;
+  };
   projects: Project[];
   skills: SkillGroup[];
   contact: {

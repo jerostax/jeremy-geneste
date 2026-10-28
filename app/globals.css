@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #17181c;
-  --color-panel: #1f2026;
-  --color-panel-strong: #24252c;
-  --color-paper: #ededef;
-  --color-soft: #c8c9cf;
-  --color-muted: #9a9ba3;
-  --color-line: #2a2b32;
-  --color-accent: #f2b84b;
+  --color-ink: #0b1220;
+  --color-panel: #111b2d;
+  --color-panel-strong: #16233a;
+  --color-paper: #e9eef6;
+  --color-soft: #bfcadb;
+  --color-muted: #8696ad;
+  --color-line: #1d2a40;
+  --color-accent: #6fb2ff;
   --color-danger: #ff8a7a;
 
   --font-display: var(--font-bricolage), system-ui, sans-serif;
@@ -45,34 +45,17 @@ button:focus-visible {
     opacity 0.3s;
 }
 
-/* Timeline: the rail fills as you read, each dot lights up once reached. */
-.rail-fill {
-  transform-origin: top;
-  transform: scaleY(var(--progress, 0));
+/* Elevation profile: milestones light up as the track reaches them. */
+.ascent-pin {
+  transition: fill 0.3s, stroke 0.3s;
 }
-.job::before {
-  content: "";
-  position: absolute;
-  left: 90px;
-  top: 28px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-ink);
-  border: 2px solid var(--color-line);
-  transition: border-color 0.3s, background 0.3s;
+[data-ascent-pin][data-reached] .ascent-pin,
+html:not(.js) .ascent-pin {
+  fill: var(--color-accent);
+  stroke: var(--color-accent);
 }
-.job[data-reached]::before {
-  border-color: var(--color-accent);
-  background: var(--color-accent);
-}
-.job[data-reached] .job-period {
-  color: var(--color-paper);
-}
-@media (max-width: 1023px) {
-  .job::before {
-    display: none;
-  }
+[data-ascent-pin][data-reached] .ascent-label {
+  fill: var(--color-paper);
 }
 
 /* Delange figures: the bar shrinks while the number counts down. */
