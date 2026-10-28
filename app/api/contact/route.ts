@@ -56,12 +56,13 @@ export async function POST(request: Request) {
   }
 
   const email = buildContactEmail(result.data);
-  // Without a verified domain, Resend only delivers to the account owner's address.
+  // jeremy-geneste.com is verified in Resend (DKIM + SPF records in Vercel DNS).
+  // site@ is send-only: there is no mailbox behind it, replies go to the visitor.
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: "Site Jérémy Geneste <onboarding@resend.dev>",
+      from: "Site Jérémy Geneste <site@jeremy-geneste.com>",
       to: [person.email],
       reply_to: email.replyTo,
       subject: email.subject,
