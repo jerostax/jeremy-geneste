@@ -16,7 +16,7 @@ export const en: Content = {
     navLabel: "Page sections",
     writeCta: "Email Jérémy",
     cv: "Resume (PDF)",
-    cvFile: null,
+    cvFile: "/cv/jeremy-geneste-cv-en.pdf",
     switchLanguage: "Lire en français",
     photoAlt: "Portrait of Jérémy Geneste",
   },
