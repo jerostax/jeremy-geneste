@@ -1,35 +1,57 @@
-export type Metric = {
-  before: string;
-  after: string;
+export type Figure = {
   label: string;
+  from: number;
+  to: number;
+  unit: string;
 };
 
 export type Mission = {
-  client: string;
-  summary: string;
+  name: string;
+  text: string;
   stack: string;
 };
 
 export type TimelineEntry = {
   period: string;
-  role: string;
   company: string;
-  place: string;
-  points?: string[];
+  role: string;
+  text?: string;
+  figures?: Figure[];
   missions?: Mission[];
+  stack?: string;
+  link?: { label: string; href: string };
 };
 
 export type Project = {
   title: string;
-  status: string;
+  context: string;
   text: string;
-  points?: string[];
   stack: string;
 };
 
 export type SkillGroup = {
   label: string;
   items: string;
+};
+
+export type FormCopy = {
+  name: string;
+  email: string;
+  company: string;
+  message: string;
+  submit: string;
+  sending: string;
+  orDirectly: string;
+  privacy: string;
+  sentTitle: string;
+  sentText: string;
+  errors: {
+    name: string;
+    email: string;
+    message: string;
+    rateLimited: string;
+    failed: string;
+  };
 };
 
 export type Content = {
@@ -39,54 +61,32 @@ export type Content = {
     jobTitle: string;
     ogTagline: string;
   };
-  nav: {
-    work: string;
-    path: string;
-    projects: string;
-    contact: string;
-    switchLanguage: string;
-    switchLanguageLabel: string;
-  };
-  hero: {
-    kicker: string;
-    intro: string;
-    availability: string;
-    emailCta: string;
-    photoAlt: string;
-    photoCaption: string;
-  };
-  caseStudy: {
-    heading: string;
-    client: string;
+  sidebar: {
     role: string;
-    intro: string;
-    metrics: Metric[];
-    metricsSource: string;
-    points: string[];
-    stack: string;
-    visit: string;
+    facts: string[];
+    nav: { parcours: string; projects: string; skills: string; contact: string };
+    navLabel: string;
+    writeCta: string;
+    cv: string;
+    cvFile: string | null;
+    switchLanguage: string;
+    photoAlt: string;
   };
-  path: {
-    heading: string;
-    entries: TimelineEntry[];
+  lead: string;
+  now: string;
+  numberLocale: string;
+  sections: {
+    parcours: string;
+    projects: string;
+    skills: string;
+    contact: string;
   };
-  projects: {
-    heading: string;
-    items: Project[];
-  };
-  skills: {
-    heading: string;
-    groups: SkillGroup[];
-    languages: string;
-  };
+  timeline: TimelineEntry[];
+  projects: Project[];
+  skills: SkillGroup[];
   contact: {
     heading: string;
-    text: string;
-    cvLabel: string;
-    cvFile: string | null;
+    form: FormCopy;
   };
-  footer: {
-    builtWith: string;
-    hosting: string;
-  };
+  footer: string;
 };

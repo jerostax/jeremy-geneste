@@ -6,7 +6,7 @@ import "../globals.css";
 
 export const metadata: Metadata = buildMetadata("fr", content.fr);
 
-export const viewport: Viewport = { themeColor: "#0d0c0a", colorScheme: "dark" };
+export const viewport: Viewport = { themeColor: "#17181c", colorScheme: "dark" };
 
 export default function FrenchLayout({ children }: { children: React.ReactNode }) {
   return <RootShell locale="fr">{children}</RootShell>;
