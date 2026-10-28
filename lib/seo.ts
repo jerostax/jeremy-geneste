@@ -24,16 +24,17 @@ export function buildMetadata(locale: Locale, content: Content): Metadata {
       firstName: "Jérémy",
       lastName: "Geneste",
       url,
-      siteName: person.name,
+      // Shown under the title in link cards (LinkedIn...): the domain, not the name a second time.
+      siteName: new URL(siteUrl).host,
       title: content.meta.title,
-      description: content.meta.description,
+      description: content.meta.shareDescription,
       locale: ogLocale[locale],
       alternateLocale: ogLocale[locale === "fr" ? "en" : "fr"],
     },
     twitter: {
       card: "summary_large_image",
       title: content.meta.title,
-      description: content.meta.description,
+      description: content.meta.shareDescription,
     },
   };
 }
