@@ -2,7 +2,8 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 
-export const size = { width: 64, height: 64 };
+// Google wants a square favicon whose side is a multiple of 48 px.
+export const size = { width: 96, height: 96 };
 export const contentType = "image/png";
 
 export default async function Icon() {
@@ -16,12 +17,12 @@ export default async function Icon() {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          borderRadius: 14,
+          borderRadius: 21,
           background: "#6fb2ff",
           color: "#0b1220",
           fontFamily: "Bricolage Grotesque",
-          fontSize: 34,
-          letterSpacing: -1,
+          fontSize: 51,
+          letterSpacing: -1.5,
         }}
       >
         JG

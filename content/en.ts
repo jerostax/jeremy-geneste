@@ -4,7 +4,7 @@ export const en: Content = {
   meta: {
     title: "Jérémy Geneste, full-stack JavaScript and AI developer",
     description:
-      "Jérémy Geneste, full-stack JavaScript / TypeScript developer since 2019, looking for a permanent role in Paris, France. End-to-end web applications with React, Next.js and Node.js, with AI where it actually helps.",
+      "Jérémy Geneste, full-stack JavaScript / TypeScript developer since 2019, looking for a permanent role in Paris. React, Next.js, Node.js and AI.",
     jobTitle: "Full-stack JavaScript and AI developer",
     ogTagline: "Full-stack JavaScript / TypeScript and AI developer",
     shareDescription: "Portfolio of Jérémy Geneste, full-stack JavaScript / TypeScript and AI developer looking for a permanent role in Paris: web applications with React, Next.js and Node.js.",
