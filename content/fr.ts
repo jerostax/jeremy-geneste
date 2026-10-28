@@ -88,7 +88,7 @@ export const fr: Content = {
   },
   outside: {
     heading: "En dehors du code",
-    text: "Ma famille est de Chamonix et je suis très attaché à l’île Maurice. En dehors du code, je grimpe : dans les Alpes, à la Réunion, à Maurice.",
+    text: "Chamonix pour la famille, l’île Maurice pour le cœur, et l’escalade partout où il y a du rocher : les Alpes, la Réunion, Maurice.",
     photoAlt: "Jérémy Geneste en escalade sur une aiguille de granit, dans le massif du Mont-Blanc",
   },
   projects: [
