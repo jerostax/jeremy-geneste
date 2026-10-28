@@ -11,8 +11,6 @@ export function PageEffects({ numberLocale }: { numberLocale: string }) {
     const links = [...document.querySelectorAll<HTMLAnchorElement>("[data-toc-link]")];
     const indicator = document.querySelector<HTMLElement>("[data-toc-indicator]");
     const sections = links.map((link) => document.querySelector<HTMLElement>(link.hash));
-    const rail = document.querySelector<HTMLElement>("[data-rail]");
-    const jobs = [...document.querySelectorAll<HTMLElement>("[data-job]")];
 
     function update() {
       const readingLine = innerHeight * 0.45;
@@ -32,12 +30,6 @@ export function PageEffects({ numberLocale }: { numberLocale: string }) {
         }
       }
 
-      if (rail) {
-        const box = rail.getBoundingClientRect();
-        const progress = Math.min(1, Math.max(0, (readingLine - box.top) / box.height));
-        rail.style.setProperty("--progress", String(progress));
-      }
-      jobs.forEach((job) => job.toggleAttribute("data-reached", job.getBoundingClientRect().top + 28 < readingLine));
     }
 
     let frame = 0;
@@ -92,11 +84,51 @@ export function PageEffects({ numberLocale }: { numberLocale: string }) {
     );
     figures.forEach((figure) => observer.observe(figure));
 
+    // Elevation profile: drawn once, like a GPS track, when it comes into view.
+    const ascent = document.querySelector<SVGSVGElement>("[data-ascent]");
+    const ascentLine = ascent?.querySelector<SVGPathElement>("[data-ascent-line]");
+    const climber = ascent?.querySelector<SVGCircleElement>("[data-ascent-climber]");
+    const pins = [...(ascent?.querySelectorAll<SVGGElement>("[data-ascent-pin]") ?? [])];
+    let ascentObserver: IntersectionObserver | undefined;
+    if (ascent && ascentLine && climber && !reduceMotion) {
+      const length = ascentLine.getTotalLength();
+      const setProgress = (p: number) => {
+        ascentLine.style.strokeDashoffset = String(length * (1 - p));
+        const point = ascentLine.getPointAtLength(length * p);
+        climber.setAttribute("cx", String(point.x));
+        climber.setAttribute("cy", String(point.y));
+        pins.forEach((pin) => pin.toggleAttribute("data-reached", p >= Number(pin.dataset.ascentPin) - 0.005));
+      };
+      ascentLine.style.strokeDasharray = String(length);
+      climber.style.opacity = "1";
+      setProgress(0);
+      ascentObserver = new IntersectionObserver(
+        (entries) => {
+          if (!entries[0].isIntersecting) return;
+          ascentObserver?.disconnect();
+          const start = performance.now();
+          const step = (now: number) => {
+            // The first frame can be timestamped before `start`: clamp at 0.
+            const t = Math.min(1, Math.max(0, (now - start) / 2600));
+            setProgress(1 - Math.pow(1 - t, 2));
+            if (t < 1) requestAnimationFrame(step);
+            else climber.style.opacity = "0";
+          };
+          requestAnimationFrame(step);
+        },
+        { threshold: 0.5 },
+      );
+      ascentObserver.observe(ascent);
+    } else {
+      pins.forEach((pin) => pin.toggleAttribute("data-reached", true));
+    }
+
     return () => {
       removeEventListener("scroll", onScroll);
       removeEventListener("resize", onScroll);
       cancelAnimationFrame(frame);
       observer.disconnect();
+      ascentObserver?.disconnect();
     };
   }, [numberLocale]);
 

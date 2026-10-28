@@ -4,6 +4,7 @@ import type { Figure } from "@/content/types";
 import { buildPersonJsonLd, serializeJsonLd } from "@/lib/seo";
 import { localePath, person, type Locale } from "@/lib/site";
 import { ContactForm } from "./ContactForm";
+import { ElevationProfile } from "./ElevationProfile";
 import { PageEffects } from "./PageEffects";
 
 // "3,7 Mo" and "4,0 s" keep one decimal, like the measured values; "21 Mo" stays whole.
@@ -73,7 +74,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               </a>
             ))}
           </nav>
-          <a href="#contact" className="enter mt-6.5 block rounded-lg bg-accent py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(242,184,75,0.55)]"
+          <a href="#contact" className="enter mt-6.5 block rounded-lg bg-accent py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(111,178,255,0.55)]"
             style={{ "--i": 5 } as React.CSSProperties}>
             {t.sidebar.writeCta}
           </a>
@@ -102,14 +103,12 @@ export function HomePage({ locale }: { locale: Locale }) {
 
           <section aria-labelledby={sectionIds.parcours} className="mt-14">
             <SectionTitle id={sectionIds.parcours}>{t.sections.parcours}</SectionTitle>
-            <div className="relative">
-              <div aria-hidden data-rail className="absolute top-[22px] bottom-[22px] left-[94px] hidden w-0.5 bg-line lg:block">
-                <div className="rail-fill absolute inset-0 bg-accent" />
-              </div>
+            <ElevationProfile copy={t.ascent} />
+            <div>
               <ol>
                 {t.timeline.map((entry) => (
-                  <li key={entry.company} data-job className="job relative grid gap-1 border-b border-line py-5.5 lg:grid-cols-[110px_1fr] lg:gap-6">
-                    <span className="job-period pt-0.5 text-[15px] text-muted tabular-nums transition-colors">{entry.period}</span>
+                  <li key={entry.company} className="grid gap-1 border-b border-line py-5.5 lg:grid-cols-[110px_1fr] lg:gap-6">
+                    <span className="pt-0.5 text-[15px] text-muted tabular-nums">{entry.period}</span>
                     <div>
                       <h3 className="text-xl font-semibold tracking-[-0.01em]">{entry.company}</h3>
                       <p className="mt-0.5 text-[15px] text-muted">{entry.role}</p>
@@ -168,6 +167,16 @@ export function HomePage({ locale }: { locale: Locale }) {
                 </div>
               ))}
             </dl>
+          </section>
+
+          {/* Not in the sidebar nav on purpose: a short personal note, not a main section. */}
+          <section aria-labelledby="dehors" className="mt-14">
+            <SectionTitle id="dehors">{t.sections.outside}</SectionTitle>
+            <div className="mt-5 grid items-center gap-6 sm:grid-cols-[minmax(0,220px)_1fr] sm:gap-8">
+              <Image src="/images/jeremy-geneste-alpinisme.jpg" alt={t.outside.photoAlt} width={900} height={1200}
+                sizes="(min-width: 640px) 220px, 100vw" className="aspect-[3/4] w-full max-w-[260px] rounded-xl object-cover" />
+              <p className="max-w-[46ch] text-[17px] leading-relaxed text-soft">{t.outside.text}</p>
+            </div>
           </section>
 
           <section aria-labelledby={sectionIds.contact} className="mt-14">

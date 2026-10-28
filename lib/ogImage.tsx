@@ -19,12 +19,12 @@ export async function renderOgImage(locale: Locale) {
 
   return new ImageResponse(
     (
-      <div style={{ display: "flex", alignItems: "center", width: "100%", height: "100%", padding: 80, background: "#17181c", color: "#ededef", fontFamily: "Instrument Sans" }}>
+      <div style={{ display: "flex", alignItems: "center", width: "100%", height: "100%", padding: 80, background: "#0b1220", color: "#e9eef6", fontFamily: "Instrument Sans" }}>
         <img src={photoSrc} width={300} height={300} style={{ borderRadius: 150, objectFit: "cover" }} alt="" />
         <div style={{ display: "flex", flexDirection: "column", marginLeft: 64, flex: 1 }}>
           <div style={{ fontFamily: "Bricolage Grotesque", fontSize: 84, letterSpacing: -2, lineHeight: 1 }}>Jérémy Geneste</div>
-          <div style={{ marginTop: 24, fontSize: 34, color: "#9a9ba3" }}>{t.meta.ogTagline}</div>
-          <div style={{ marginTop: 40, width: 120, height: 8, borderRadius: 4, background: "#f2b84b" }} />
+          <div style={{ marginTop: 24, fontSize: 34, color: "#8696ad" }}>{t.meta.ogTagline}</div>
+          <div style={{ marginTop: 40, width: 120, height: 8, borderRadius: 4, background: "#6fb2ff" }} />
         </div>
       </div>
     ),
