@@ -12,6 +12,8 @@ export type Mission = {
 };
 
 export type TimelineEntry = {
+  // Stable anchor, the same in every language: the elevation profile links to it.
+  id: string;
   period: string;
   company: string;
   role: string;
@@ -91,9 +93,11 @@ export type Content = {
     label: string;
     start: string;
     end: string;
-    source: string;
-    // Fraction of the route (0 = Chamonix, 1 = summit) where each step sits.
-    milestones: { at: number; label: string }[];
+    // Short legend above the profile: what the curve means.
+    caption: string;
+    // Fraction of the route (0 = Chamonix, 1 = summit) where each step sits;
+    // `target` is the id of a timeline entry, or of a page section.
+    milestones: { at: number; label: string; target: string }[];
   };
   outside: {
     heading: string;

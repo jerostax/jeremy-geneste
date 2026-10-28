@@ -107,11 +107,11 @@ export function HomePage({ locale }: { locale: Locale }) {
 
           <section aria-labelledby={sectionIds.parcours} className="mt-14">
             <SectionTitle id={sectionIds.parcours}>{t.sections.parcours}</SectionTitle>
-            <ElevationProfile copy={t.ascent} />
+            <ElevationProfile copy={t.ascent} anchors={[...t.timeline.map((entry) => entry.id), sectionIds.contact]} />
             <div>
               <ol>
                 {t.timeline.map((entry) => (
-                  <li key={entry.company} className="grid gap-1 border-b border-line py-5.5 lg:grid-cols-[110px_1fr] lg:gap-6">
+                  <li key={entry.id} id={entry.id} className="scroll-mt-8 grid gap-1 border-b border-line py-5.5 lg:grid-cols-[110px_1fr] lg:gap-6">
                     <span className="pt-0.5 text-[15px] text-muted tabular-nums">{entry.period}</span>
                     <div>
                       <h3 className="text-xl font-semibold tracking-[-0.01em]">{entry.company}</h3>

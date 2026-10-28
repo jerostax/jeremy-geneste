@@ -57,6 +57,19 @@ html:not(.js) .ascent-pin {
 [data-ascent-pin][data-reached] .ascent-label {
   fill: var(--color-paper);
 }
+/* Each step is a link to its timeline entry. */
+.ascent-link:hover .ascent-label,
+.ascent-link:focus-visible .ascent-label {
+  fill: var(--color-accent);
+  text-decoration: underline;
+}
+[data-ascent-pin]:has(.ascent-link:hover, .ascent-link:focus-visible) .ascent-pin {
+  fill: var(--color-accent);
+  stroke: var(--color-paper);
+}
+.ascent-link:focus-visible {
+  outline: none;
+}
 
 /* Delange figures: the bar shrinks while the number counts down. */
 .figure-bar {

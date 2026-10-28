@@ -34,6 +34,7 @@ export const fr: Content = {
   timeline: [
     {
       period: "2026",
+      id: "delange",
       company: "Delange Immobilier",
       role: "Développeur fullstack freelance, Paris",
       text: "Reprise de l’application immobilière Next.js 15 / React 19 de l’agence, en production. Audit du code (environ 25 problèmes priorisés), sécurité des accès, migration vers les comptes de l’agence sans coupure, référencement et performance.",
@@ -46,6 +47,7 @@ export const fr: Content = {
     },
     {
       period: "2019–2024",
+      id: "atos-eviden",
       company: "EdifiXio / Atos / Eviden",
       role: "Développeur fullstack JavaScript, Levallois-Perret et Bezons",
       missions: [
@@ -59,12 +61,14 @@ export const fr: Content = {
     },
     {
       period: "2019",
+      id: "pop-eye",
       company: "Pop Eye",
       role: "Stage, Station F",
       text: "Version web du produit mobile de la startup, en React, Next.js et Node.js, avec envoi de fichiers sur AWS.",
     },
     {
       period: "2018–2019",
+      id: "ecole-multimedia",
       company: "L’École Multimédia",
       role: "Certification RNCP niveau II, mention excellence du jury",
     },
@@ -73,13 +77,13 @@ export const fr: Content = {
     label: "Profil d’altitude réel de Chamonix au sommet du Mont Blanc, avec les étapes de mon parcours",
     start: "Chamonix, 1 035 m",
     end: "Mont Blanc, 4 806 m",
-    source: "Profil réel Chamonix → Mont Blanc (données SRTM)",
+    caption: "Mon parcours sur le vrai profil Chamonix → Mont Blanc",
     milestones: [
-      { at: 0.02, label: "École, 2018" },
-      { at: 0.12, label: "Pop Eye, 2019" },
-      { at: 0.36, label: "Atos / Eviden, 2019–2024" },
-      { at: 0.78, label: "Delange, 2026" },
-      { at: 1, label: "La suite ?" },
+      { at: 0.02, label: "École, 2018", target: "ecole-multimedia" },
+      { at: 0.12, label: "Pop Eye, 2019", target: "pop-eye" },
+      { at: 0.36, label: "Atos / Eviden, 2019–2024", target: "atos-eviden" },
+      { at: 0.78, label: "Delange, 2026", target: "delange" },
+      { at: 1, label: "La suite ?", target: "contact" },
     ],
   },
   outside: {
