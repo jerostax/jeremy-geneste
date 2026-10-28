@@ -6,7 +6,7 @@ export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
 export default async function Icon() {
-  const serifItalic = await readFile(join(process.cwd(), "assets/fonts/InstrumentSerif-Italic.ttf"));
+  const display = await readFile(join(process.cwd(), "assets/fonts/BricolageGrotesque-SemiBold.woff"));
   return new ImageResponse(
     (
       <div
@@ -16,16 +16,17 @@ export default async function Icon() {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          background: "#0d0c0a",
-          color: "#ece5d8",
-          fontFamily: "Instrument Serif",
-          fontStyle: "italic",
-          fontSize: 46,
+          borderRadius: 14,
+          background: "#f2b84b",
+          color: "#17181c",
+          fontFamily: "Bricolage Grotesque",
+          fontSize: 34,
+          letterSpacing: -1,
         }}
       >
-        jg<span style={{ color: "#ff5a1f" }}>.</span>
+        JG
       </div>
     ),
-    { ...size, fonts: [{ name: "Instrument Serif", data: serifItalic, style: "italic", weight: 400 }] },
+    { ...size, fonts: [{ name: "Bricolage Grotesque", data: display, style: "normal", weight: 600 }] },
   );
 }

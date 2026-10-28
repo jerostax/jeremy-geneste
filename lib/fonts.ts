@@ -1,22 +1,16 @@
-import { IBM_Plex_Mono, IBM_Plex_Sans, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
 
-const serif = Instrument_Serif({
-  weight: "400",
-  style: ["normal", "italic"],
+const display = Bricolage_Grotesque({
+  weight: "variable",
+  axes: ["opsz"],
   subsets: ["latin"],
-  variable: "--font-instrument",
+  variable: "--font-bricolage",
 });
 
-const sans = IBM_Plex_Sans({
-  weight: ["400", "500"],
+const text = Instrument_Sans({
+  weight: "variable",
   subsets: ["latin"],
-  variable: "--font-plex-sans",
+  variable: "--font-instrument-sans",
 });
 
-const mono = IBM_Plex_Mono({
-  weight: ["400", "500"],
-  subsets: ["latin"],
-  variable: "--font-plex-mono",
-});
-
-export const fontVariables = `${serif.variable} ${sans.variable} ${mono.variable}`;
+export const fontVariables = `${display.variable} ${text.variable}`;

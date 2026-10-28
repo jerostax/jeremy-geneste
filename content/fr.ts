@@ -2,162 +2,110 @@ import type { Content } from "./types";
 
 export const fr: Content = {
   meta: {
-    title: "Jérémy Geneste — Développeur fullstack React, Next.js, Node.js",
+    title: "Jérémy Geneste, développeur fullstack JavaScript et IA",
     description:
-      "Jérémy Geneste, développeur fullstack JavaScript depuis 2019 en Île-de-France : React, Next.js, TypeScript et Node.js. Applications web métier, API, intégrations, SEO technique et performance.",
-    jobTitle: "Développeur fullstack JavaScript",
-    ogTagline: "Développeur fullstack · React · Next.js · Node.js",
+      "Jérémy Geneste, développeur fullstack JavaScript depuis 2019 en Île-de-France. Applications web de bout en bout en React, Next.js et Node.js, avec l’IA là où elle sert vraiment.",
+    jobTitle: "Développeur fullstack JavaScript et IA",
+    ogTagline: "Développeur fullstack JavaScript et IA",
   },
-  nav: {
-    work: "Étude de cas",
-    path: "Parcours",
-    projects: "Projets",
-    contact: "Contact",
-    switchLanguage: "EN",
-    switchLanguageLabel: "Read in English",
-  },
-  hero: {
-    kicker: "Développeur fullstack · Île-de-France · depuis 2019",
-    intro:
-      "Je conçois, reprends et fais évoluer des applications web métier, de l’interface jusqu’à la base de données : React, Next.js, TypeScript et Node.js, avec les intégrations qui vont autour (Salesforce, Jira, API tierces).",
-    availability: "Ouvert aux opportunités, en français comme en anglais.",
-    emailCta: "M’écrire",
-    photoAlt: "Portrait de Jérémy Geneste, développeur fullstack",
-    photoCaption: "Jérémy Geneste, Paris",
-  },
-  caseStudy: {
-    heading: "Étude de cas",
-    client: "Delange Immobilier",
-    role: "Développeur fullstack freelance · depuis octobre 2026 · seul interlocuteur technique",
-    intro:
-      "Reprise d’une application immobilière Next.js 15 / React 19 en production : audit, sécurité, migration d’infrastructure, SEO et performance.",
-    metrics: [
-      { before: "21 Mo", after: "3,7 Mo", label: "poids de la page d’accueil" },
-      { before: "88,7 s", after: "4,0 s", label: "affichage du contenu principal (LCP mobile)" },
-    ],
-    metricsSource: "Mesures PageSpeed Insights, avant et après.",
-    points: [
-      "Audit du code : environ 25 problèmes documentés et priorisés, accès API et administration corrigés.",
-      "Migration de GitHub, Vercel et PostgreSQL / Neon vers les comptes de l’agence, sans interruption de service.",
-      "SEO technique : métadonnées propres à chaque annonce, canonical et hreflang, données structurées, annonces rendues côté serveur.",
-      "Workflow par pull requests et previews, tests de non-régression.",
-    ],
-    stack: "Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · Prisma · PostgreSQL · Neon · Vercel · API Apimo · Mapbox",
-    visit: "Voir le site",
-  },
-  path: {
-    heading: "Parcours",
-    entries: [
-      {
-        period: "2026 —",
-        role: "Développeur fullstack (freelance)",
-        company: "Delange Immobilier",
-        place: "Paris",
-        points: ["Reprise, sécurisation et évolution de l’application de l’agence (voir l’étude de cas)."],
-      },
-      {
-        period: "2019 — 2024",
-        role: "Développeur fullstack JavaScript",
-        company: "EdifiXio / Atos / Eviden",
-        place: "Levallois-Perret · Bezons",
-        missions: [
-          {
-            client: "JUNIA — Admissions",
-            summary:
-              "Fonctionnalités front et back en autonomie : un espace Jury (évaluation des dossiers et entretiens) et un espace Agent (inscriptions groupées d’étudiants internationaux).",
-            stack: "React · TypeScript · Express · PostgreSQL · API Salesforce · Heroku",
-          },
-          {
-            client: "JUNIA — Salons étudiants",
-            summary: "Évolution d’une application tablette qui recueille les choix de formation des visiteurs.",
-            stack: "Ionic · Angular · Express · TypeScript · PostgreSQL · Salesforce",
-          },
-          {
-            client: "Application interne de staffing",
-            summary: "Développement fullstack en autonomie, intégration des API Jira et Salesforce et de l’authentification Salesforce.",
-            stack: "React · Express · MongoDB",
-          },
-          {
-            client: "UDIFE",
-            summary: "Avec un lead développeur, application qui centralise les informations métier de l’accompagnement funéraire.",
-            stack: "Next.js · MongoDB · IBM Cloud",
-          },
-          {
-            client: "MACIF",
-            summary: "Site de demande d’assistance automobile (dépannage, remorquage), avec les équipes API et design.",
-            stack: "Angular · API REST",
-          },
-          {
-            client: "Jean Stalaven",
-            summary: "Algorithme de recommandation de produits d’un catalogue.",
-            stack: "Node.js",
-          },
-          {
-            client: "Touton",
-            summary: "Application de gestion des contrats d’achat et de vente de cacao et de café.",
-            stack: "Appian",
-          },
-        ],
-      },
-      {
-        period: "2019",
-        role: "Développeur web fullstack (stage)",
-        company: "Pop Eye",
-        place: "Station F, Paris",
-        points: [
-          "Version web du produit mobile de la startup : interfaces React / Next.js, API Node.js, envoi de fichiers sur AWS, avec le lead développeur.",
-        ],
-      },
-      {
-        period: "2018 — 2019",
-        role: "Certification RNCP niveau II, développeur multimédia",
-        company: "L’École Multimédia",
-        place: "Paris",
-        points: ["Mention : excellence du jury."],
-      },
-    ],
-  },
-  projects: {
-    heading: "En ce moment",
-    items: [
-      {
-        title: "SaaS de génération de sites web par IA",
-        status: "Projet entrepreneurial en cours, avec un Business Analyst",
-        text: "Un MVP qui crée des sites professionnels personnalisés pour les petites entreprises : contenus générés par Gemini, templates réutilisables, architecture multi-sites.",
-        stack: "Next.js · TypeScript · Prisma · PostgreSQL · Vercel · API Gemini",
-      },
-      {
-        title: "Outillage de développement assisté par IA",
-        status: "Projet personnel, configuration versionnée",
-        text: "Mon environnement Claude Code sous WSL, avec des garde-fous : l’IA analyse et propose, je valide chaque décision et chaque action sensible.",
-        points: [
-          "Agents d’audit de sécurité et de SEO technique.",
-          "Skill /pr-ready : typecheck, tests, relecture et contrôle avant chaque pull request.",
-          "Hooks Python : blocage des push sur main, vérification des traductions.",
-          "Permissions restrictives et protection des secrets.",
-        ],
-        stack: "Claude Code · Python · MCP · Git",
-      },
-    ],
-  },
-  skills: {
-    heading: "Compétences",
-    groups: [
-      { label: "Front-end", items: "React, Next.js, TypeScript, JavaScript, Angular, Ionic, Tailwind CSS, CSS / SCSS" },
-      { label: "Back-end & données", items: "Node.js, Express, API REST, PostgreSQL, MongoDB, Prisma" },
-      { label: "Cloud & outils", items: "Git, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian, Agile" },
-      { label: "IA", items: "Claude Code, agents, skills, hooks, ChatGPT, API Gemini" },
-    ],
-    languages: "Français (langue maternelle) · anglais (professionnel)",
-  },
-  contact: {
-    heading: "Parlons-en.",
-    text: "Un poste, une mission, une application à reprendre : écrivez-moi, je réponds rapidement.",
-    cvLabel: "Télécharger le CV (PDF)",
+  sidebar: {
+    role: "Développeur fullstack JavaScript et IA",
+    facts: ["Île-de-France", "Développeur depuis 2019", "Français, anglais professionnel"],
+    nav: { parcours: "Parcours", projects: "Projets", skills: "Compétences", contact: "Contact" },
+    navLabel: "Sections de la page",
+    writeCta: "Écrire à Jérémy",
+    cv: "CV en PDF",
     cvFile: null,
+    switchLanguage: "Read in English",
+    photoAlt: "Portrait de Jérémy Geneste",
   },
-  footer: {
-    builtWith: "Conçu et développé avec Next.js.",
-    hosting: "Hébergement : Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.",
+  lead: "Je conçois des applications web de bout en bout, et j’y intègre l’IA là où elle sert vraiment.",
+  now: "En ce moment : freelance pour Delange Immobilier, et un SaaS de création de sites par IA. Ouvert à un poste ou une mission, en français ou en anglais.",
+  numberLocale: "fr-FR",
+  sections: {
+    parcours: "Parcours",
+    projects: "Projets en cours",
+    skills: "Compétences",
+    contact: "Contact",
   },
+  timeline: [
+    {
+      period: "2026",
+      company: "Delange Immobilier",
+      role: "Développeur fullstack freelance, Paris",
+      text: "Reprise de l’application immobilière Next.js 15 / React 19 de l’agence, en production. Audit du code (environ 25 problèmes priorisés), sécurité des accès, migration vers les comptes de l’agence sans coupure, référencement et performance.",
+      figures: [
+        { label: "Poids de la page d’accueil", from: 21, to: 3.7, unit: "Mo" },
+        { label: "Affichage sur mobile (LCP)", from: 88.7, to: 4, unit: "s" },
+      ],
+      stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, API Apimo.",
+      link: { label: "Voir le site", href: "https://www.delangeimmobilier.com" },
+    },
+    {
+      period: "2019–2024",
+      company: "EdifiXio / Atos / Eviden",
+      role: "Développeur fullstack JavaScript, Levallois-Perret et Bezons",
+      missions: [
+        { name: "JUNIA, admissions.", text: "Espace Jury et espace Agent pour les inscriptions d’étudiants internationaux.", stack: "React, TypeScript, Express, PostgreSQL, Salesforce" },
+        { name: "JUNIA, salons étudiants.", text: "Application tablette de recueil des choix de formation.", stack: "Ionic, Angular, Express" },
+        { name: "Staffing interne.", text: "Fullstack, intégrations Jira et Salesforce.", stack: "React, Express, MongoDB" },
+        { name: "UDIFE.", text: "Application métier de l’accompagnement funéraire, avec un lead développeur.", stack: "Next.js, MongoDB, IBM Cloud" },
+        { name: "MACIF.", text: "Site de demande d’assistance automobile.", stack: "Angular, API REST" },
+        { name: "Jean Stalaven, Touton.", text: "Algorithme de recommandation ; gestion de contrats de cacao et de café.", stack: "Node.js, Appian" },
+      ],
+    },
+    {
+      period: "2019",
+      company: "Pop Eye",
+      role: "Stage, Station F",
+      text: "Version web du produit mobile de la startup, en React, Next.js et Node.js, avec envoi de fichiers sur AWS.",
+    },
+    {
+      period: "2018–2019",
+      company: "L’École Multimédia",
+      role: "Certification RNCP niveau II, mention excellence du jury",
+    },
+  ],
+  projects: [
+    {
+      title: "SaaS de création de sites par IA",
+      context: "Projet entrepreneurial, avec un Business Analyst",
+      text: "Un MVP qui crée des sites professionnels personnalisés pour les petites entreprises : contenus générés par Gemini, templates réutilisables, architecture multi-sites.",
+      stack: "Next.js, TypeScript, Prisma, PostgreSQL, Vercel",
+    },
+    {
+      title: "Développement assisté par IA",
+      context: "Projet personnel",
+      text: "Mon environnement Claude Code : agents d’audit de sécurité et de référencement, contrôles automatiques avant chaque pull request, garde-fous sur Git et sur les secrets. L’IA propose, je valide.",
+      stack: "Claude Code, Python, MCP",
+    },
+  ],
+  skills: [
+    { label: "Front-end", items: "React, Next.js, TypeScript, JavaScript, Angular, Ionic, Tailwind CSS" },
+    { label: "Back-end et données", items: "Node.js, Express, API REST, PostgreSQL, MongoDB, Prisma" },
+    { label: "Cloud et outils", items: "Git, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
+  ],
+  contact: {
+    heading: "Un poste, une mission, une application à reprendre ? Écrivez-moi.",
+    form: {
+      name: "Nom",
+      email: "E-mail",
+      company: "Entreprise (facultatif)",
+      message: "Message",
+      submit: "Envoyer le message",
+      sending: "Envoi…",
+      orDirectly: "ou directement à",
+      privacy: "Vos informations servent uniquement à vous répondre. Elles ne sont ni conservées sur ce site, ni partagées.",
+      sentTitle: "Message envoyé.",
+      sentText: "Merci, je vous réponds rapidement à l’adresse indiquée.",
+      errors: {
+        name: "Indiquez votre nom.",
+        email: "Indiquez une adresse e-mail valide.",
+        message: "Écrivez votre message.",
+        rateLimited: "Trop de messages envoyés. Réessayez dans une heure, ou écrivez-moi directement.",
+        failed: "Le message n’est pas parti. Réessayez, ou écrivez-moi directement.",
+      },
+    },
+  },
+  footer: "Jérémy Geneste, 2026. Hébergement : Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.",
 };
