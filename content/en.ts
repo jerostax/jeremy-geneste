@@ -34,6 +34,7 @@ export const en: Content = {
   timeline: [
     {
       period: "2026",
+      id: "delange",
       company: "Delange Immobilier",
       role: "Freelance full-stack developer, Paris",
       text: "Took over the agency’s live Next.js 15 / React 19 real-estate application. Code audit (about 25 prioritized issues), access security, migration to the agency’s own accounts with no downtime, SEO and performance.",
@@ -46,6 +47,7 @@ export const en: Content = {
     },
     {
       period: "2019–2024",
+      id: "atos-eviden",
       company: "EdifiXio / Atos / Eviden",
       role: "Full-stack JavaScript developer, Levallois-Perret and Bezons, France",
       missions: [
@@ -59,12 +61,14 @@ export const en: Content = {
     },
     {
       period: "2019",
+      id: "pop-eye",
       company: "Pop Eye",
       role: "Internship, Station F, Paris",
       text: "Web version of the startup’s mobile product, with React, Next.js and Node.js, and AWS file uploads.",
     },
     {
       period: "2018–2019",
+      id: "ecole-multimedia",
       company: "L’École Multimédia",
       role: "RNCP Level II certification, with jury honors",
     },
@@ -73,13 +77,13 @@ export const en: Content = {
     label: "Real elevation profile from Chamonix to the Mont Blanc summit, with the steps of my career",
     start: "Chamonix, 1,035 m",
     end: "Mont Blanc, 4,806 m",
-    source: "Real profile, Chamonix → Mont Blanc (SRTM data)",
+    caption: "My career on the real Chamonix → Mont Blanc profile",
     milestones: [
-      { at: 0.02, label: "School, 2018" },
-      { at: 0.12, label: "Pop Eye, 2019" },
-      { at: 0.36, label: "Atos / Eviden, 2019–2024" },
-      { at: 0.78, label: "Delange, 2026" },
-      { at: 1, label: "What’s next?" },
+      { at: 0.02, label: "School, 2018", target: "ecole-multimedia" },
+      { at: 0.12, label: "Pop Eye, 2019", target: "pop-eye" },
+      { at: 0.36, label: "Atos / Eviden, 2019–2024", target: "atos-eviden" },
+      { at: 0.78, label: "Delange, 2026", target: "delange" },
+      { at: 1, label: "What’s next?", target: "contact" },
     ],
   },
   outside: {
