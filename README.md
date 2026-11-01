@@ -27,6 +27,8 @@ Personal site of **Jérémy Geneste**, full-stack JavaScript / TypeScript develo
 
 **Motion with restraint.** One page-load entrance, figures that count down, the profile drawn once, a sidebar that follows the section being read. All of it respects `prefers-reduced-motion`.
 
+**A logo built from the font, not drawn.** The JG mark is set from the real outlines of Bricolage Grotesque (ExtraBold at optical size 14, legible down to 16 px). `npm run brand` (`scripts/brand/`) derives every asset from those outlines: favicon, iOS icon, monochrome versions, horizontal lockups and the email signatures, so they are identical to the pixel. See `brand/README.md`.
+
 **The resume as code.** `cv/fr.html` and `cv/en.html` are the sources of the downloadable resumes: printed from the browser to one-page A4 PDFs in `public/cv/`, so they are real text (searchable, readable by applicant tracking systems), light, and contain no phone number by construction. See `cv/README.md`.
 
 ## Project structure
@@ -37,7 +39,9 @@ components/     page sections, contact form, elevation profile, client-side effe
 content/        typed FR and EN copy
 lib/            pure helpers (contact validation, request guard, rate limit, profile geometry, SEO, security headers) and their tests
 cv/             resume sources (HTML + CSS)
-public/         photos and resume PDFs
+brand/          generated brand kit (logo variants, favicon, email signatures)
+scripts/brand/  brand kit generator and its tests
+public/         photos, resume PDFs and the signature logo
 ```
 
 ## Run locally
@@ -47,6 +51,7 @@ npm ci
 npm run dev        # http://localhost:3000
 npm run typecheck
 npm test
+npm run brand      # regenerate the brand kit (needs Microsoft Edge, from WSL)
 ```
 
 The contact form needs `RESEND_API_KEY`. Without it, the API answers `503` and nothing is sent.
