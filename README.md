@@ -17,7 +17,7 @@ Personal site of **Jérémy Geneste**, full-stack JavaScript / TypeScript develo
 
 **Everything that matters is in the server HTML.** The page is statically rendered. Client JavaScript is limited to the animations (`components/PageEffects.tsx`), the contact form (`components/ContactForm.tsx`) and the BotID check. The figures, the timeline and the elevation profile are readable without JavaScript and by search engines. A `ProfilePage` + `Person` JSON-LD links the site to LinkedIn, GitHub and Malt.
 
-**Share images generated, not drawn.** `opengraph-image` routes render one 1200 × 630 image per language with `next/og`, reusing the site fonts and the same elevation profile. Link previews get their own short description, separate from the search engine one.
+**Share images generated, not drawn.** `opengraph-image` routes render one 1200 × 630 image per language with `next/og`, reusing the site fonts, the same elevation profile and the JG mark next to the domain. Link previews get their own short description, separate from the search engine one.
 
 **A real elevation profile as the timeline.** The experience section is led by the elevation profile from Chamonix to the Mont Blanc summit: 100 SRTM 30 m samples from the OpenTopoData API, stored in `lib/elevationProfile.ts`. A pure, tested helper turns them into SVG paths; career steps sit on the route and the track is drawn once when it comes into view.
 
