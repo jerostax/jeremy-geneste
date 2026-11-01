@@ -12,6 +12,7 @@ export const fr: Content = {
   sidebar: {
     role: "Développeur fullstack JavaScript et IA",
     status: "En recherche d’un CDI à Paris",
+    freelanceStatus: "Disponible pour des missions freelance",
     facts: ["Île-de-France", "Développeur depuis 2019", "Français, anglais professionnel"],
     nav: { parcours: "Parcours", projects: "Projets", skills: "Compétences", contact: "Contact" },
     navLabel: "Sections de la page",
@@ -22,7 +23,7 @@ export const fr: Content = {
     photoAlt: "Portrait de Jérémy Geneste",
   },
   lead: "Je conçois des applications web de bout en bout, et j’y intègre l’IA là où elle sert vraiment.",
-  now: "Je recherche un CDI fullstack JavaScript / TypeScript à Paris ou en Île-de-France, en français ou en anglais. En parallèle, je travaille en freelance pour Delange Immobilier et je développe un SaaS de création de sites par IA.",
+  now: "Je recherche un CDI fullstack JavaScript / TypeScript à Paris ou en Île-de-France, en français ou en anglais. En parallèle, je prends des missions freelance : je travaille actuellement pour Delange Immobilier et je développe un SaaS de création de sites par IA.",
   numberLocale: "fr-FR",
   sections: {
     parcours: "Parcours",
@@ -111,6 +112,7 @@ export const fr: Content = {
   ],
   contact: {
     heading: "Vous recrutez en CDI, ou vous avez besoin d’aide sur un projet ? Écrivez-moi.",
+    freelanceNote: { text: "Pour une mission freelance, vous pouvez aussi passer par", link: "mon profil Malt" },
     form: {
       name: "Nom",
       email: "E-mail",

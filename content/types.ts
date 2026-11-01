@@ -69,6 +69,8 @@ export type Content = {
     role: string;
     // What I am looking for: shown first, right under the job title.
     status: string;
+    // Secondary availability, shown under the status in a quieter style.
+    freelanceStatus: string;
     facts: string[];
     nav: { parcours: string; projects: string; skills: string; contact: string };
     navLabel: string;
@@ -106,6 +108,8 @@ export type Content = {
   skills: SkillGroup[];
   contact: {
     heading: string;
+    // Sentence before the Malt profile link, for freelance clients.
+    freelanceNote: { text: string; link: string };
     form: FormCopy;
   };
   footer: string;
