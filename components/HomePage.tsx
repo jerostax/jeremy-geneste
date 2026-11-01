@@ -118,7 +118,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <div>
                       <h3 className="text-xl font-semibold tracking-[-0.01em]">{entry.company}</h3>
                       <p className="mt-0.5 text-[15px] text-muted">{entry.role}</p>
-                      {entry.text && <p className="mt-2.5 max-w-[64ch] leading-relaxed text-soft">{entry.text}</p>}
+                      {entry.text?.map((paragraph) => <p key={paragraph} className="mt-2.5 max-w-[64ch] leading-relaxed text-soft">{paragraph}</p>)}
                       {entry.figures && (
                         <div className="mt-4 grid max-w-[560px] gap-3 sm:grid-cols-2">
                           {entry.figures.map((figure) => <FigureCard key={figure.label} figure={figure} locale={t.numberLocale} />)}

@@ -38,12 +38,15 @@ export const en: Content = {
       id: "delange",
       company: "Delange Immobilier",
       role: "Freelance full-stack developer, Paris",
-      text: "Took over the agency’s live Next.js 15 / React 19 real-estate application. Code audit (about 25 prioritized issues), access security, migration to the agency’s own accounts with no downtime, SEO and performance.",
+      text: [
+        "Took over the agency’s live Next.js 15 / React 19 real-estate application: code audit (about 25 prioritized issues), access security, migration to the agency’s own accounts with no downtime, SEO and performance.",
+        "Then business features: website enquiries reach the agency’s CRM again, with the property and the assigned agent; legally required display of agency fees and condominium disclosures; end-to-end Playwright tests against a mock CRM.",
+      ],
       figures: [
         { label: "Homepage weight", from: 21, to: 3.7, unit: "MB" },
         { label: "Mobile display time (LCP)", from: 88.7, to: 4, unit: "s" },
       ],
-      stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, Apimo API.",
+      stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, Apimo API, Playwright.",
       link: { label: "Visit the site", href: "https://www.delangeimmobilier.com" },
     },
     {
@@ -65,7 +68,7 @@ export const en: Content = {
       id: "pop-eye",
       company: "Pop Eye",
       role: "Internship, Station F, Paris",
-      text: "Web version of the startup’s mobile product, with React, Next.js and Node.js, and AWS file uploads.",
+      text: ["Web version of the startup’s mobile product, with React, Next.js and Node.js, and AWS file uploads."],
     },
     {
       period: "2018–2019",
@@ -101,14 +104,14 @@ export const en: Content = {
     {
       title: "AI-assisted development",
       context: "Personal project",
-      text: "My Claude Code setup: security and SEO auditing agents, a tooled checklist I run before pull requests, safeguards on Git and secrets. The AI proposes, I approve.",
-      stack: "Claude Code, Python, MCP",
+      text: "My Claude Code setup: security and SEO auditing agents, a tooled checklist I run before pull requests, safeguards on Git and secrets, and a Notion connection to track my tasks and keep the client informed. The AI proposes, I approve.",
+      stack: "Claude Code, Python, MCP, Notion API",
     },
   ],
   skills: [
     { label: "Front-end", items: "React, Next.js, TypeScript, JavaScript, Angular, Ionic, Tailwind CSS" },
     { label: "Back-end and data", items: "Node.js, Express, REST APIs, PostgreSQL, MongoDB, Prisma" },
-    { label: "Cloud and tools", items: "Git, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
+    { label: "Cloud and tools", items: "Git, Playwright, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
   ],
   contact: {
     heading: "Hiring for a permanent role, or need help on a project? Drop me a line.",

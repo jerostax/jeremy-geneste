@@ -17,7 +17,8 @@ export type TimelineEntry = {
   period: string;
   company: string;
   role: string;
-  text?: string;
+  // One string per paragraph.
+  text?: string[];
   figures?: Figure[];
   missions?: Mission[];
   stack?: string;
