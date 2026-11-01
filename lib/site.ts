@@ -16,6 +16,7 @@ export const person = {
   links: {
     linkedin: "https://www.linkedin.com/in/jeremy-geneste/",
     github: "https://github.com/jerostax",
+    malt: "https://www.malt.fr/profile/jeremygeneste",
   },
 } as const;
 

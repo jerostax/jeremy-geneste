@@ -12,6 +12,7 @@ export const en: Content = {
   sidebar: {
     role: "Full-stack JavaScript and AI developer",
     status: "Looking for a permanent role in Paris",
+    freelanceStatus: "Available for freelance work",
     facts: ["Paris area, France", "Developer since 2019", "French, professional English"],
     nav: { parcours: "Experience", projects: "Projects", skills: "Skills", contact: "Contact" },
     navLabel: "Page sections",
@@ -22,7 +23,7 @@ export const en: Content = {
     photoAlt: "Portrait of Jérémy Geneste",
   },
   lead: "I build web applications end to end, and bring in AI where it actually helps.",
-  now: "I’m looking for a permanent full-stack JavaScript / TypeScript role in Paris or the Île-de-France region, in French or in English. Meanwhile, I freelance for Delange Immobilier and build an AI website generation SaaS.",
+  now: "I’m looking for a permanent full-stack JavaScript / TypeScript role in Paris or the Île-de-France region, in French or in English. Meanwhile, I take on freelance work: I currently work for Delange Immobilier and build an AI website generation SaaS.",
   numberLocale: "en-US",
   sections: {
     parcours: "Experience",
@@ -111,6 +112,7 @@ export const en: Content = {
   ],
   contact: {
     heading: "Hiring for a permanent role, or need help on a project? Drop me a line.",
+    freelanceNote: { text: "For freelance work, you can also reach me through", link: "my Malt profile" },
     form: {
       name: "Name",
       email: "Email",

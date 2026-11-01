@@ -65,6 +65,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <span aria-hidden className="size-2 rounded-full bg-accent" />
             {t.sidebar.status}
           </p>
+          <p className="enter mt-2 text-[14px] text-muted" style={{ "--i": 2 } as React.CSSProperties}>{t.sidebar.freelanceStatus}</p>
           <ul className="enter mt-5 text-[15px] leading-[1.9] text-soft" style={{ "--i": 3 } as React.CSSProperties}>
             {t.sidebar.facts.map((fact) => <li key={fact}>{fact}</li>)}
           </ul>
@@ -85,6 +86,7 @@ export function HomePage({ locale }: { locale: Locale }) {
           <p className="enter mt-3.5 flex flex-wrap gap-x-4.5 gap-y-1 text-[15px]" style={{ "--i": 6 } as React.CSSProperties}>
             <a href={person.links.linkedin} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">LinkedIn</a>
             <a href={person.links.github} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">GitHub</a>
+            <a href={person.links.malt} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Malt</a>
             {t.sidebar.cvFile && <a href={t.sidebar.cvFile} className="underline underline-offset-2">{t.sidebar.cv}</a>}
           </p>
           <p className="enter mt-2.5 text-[15px] text-muted" style={{ "--i": 7 } as React.CSSProperties}>
@@ -187,6 +189,10 @@ export function HomePage({ locale }: { locale: Locale }) {
             <SectionTitle id={sectionIds.contact}>{t.sections.contact}</SectionTitle>
             <p className="mt-4.5 max-w-[34ch] font-display text-[clamp(1.4rem,2.2vw,1.9rem)] leading-snug font-semibold tracking-[-0.01em]">
               {t.contact.heading}
+            </p>
+            <p className="mt-3 text-[15px] text-soft">
+              {t.contact.freelanceNote.text}{" "}
+              <a href={person.links.malt} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-paper">{t.contact.freelanceNote.link}</a>.
             </p>
             <ContactForm copy={t.contact.form} email={person.email} />
           </section>

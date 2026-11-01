@@ -1,6 +1,6 @@
 # jeremy-geneste.com
 
-Personal site of **Jérémy Geneste**, full-stack JavaScript / TypeScript developer based in Paris, looking for a permanent role in Paris / Île-de-France.
+Personal site of **Jérémy Geneste**, full-stack JavaScript / TypeScript developer based in Paris, looking for a permanent role in Paris / Île-de-France and available for freelance work.
 
 **Live:** [jeremy-geneste.com](https://jeremy-geneste.com) (French) · [jeremy-geneste.com/en](https://jeremy-geneste.com/en) (English)
 
@@ -15,7 +15,7 @@ Personal site of **Jérémy Geneste**, full-stack JavaScript / TypeScript develo
 
 **Bilingual without an i18n library.** French at `/` and English at `/en`, each with its own root layout (route groups), so every page ships the right `<html lang>`. There is no redirect based on the browser language: search engine crawlers always see both versions. `canonical`, `hreflang` (`fr`, `en`, `x-default`) and the sitemap tie them together. The copy lives in two typed dictionaries (`content/fr.ts`, `content/en.ts`). With two root layouts there is no shared one for a 404, so a bilingual `global-not-found` page handles unknown URLs.
 
-**Everything that matters is in the server HTML.** The page is statically rendered. Client JavaScript is limited to the animations (`components/PageEffects.tsx`), the contact form (`components/ContactForm.tsx`) and the BotID check. The figures, the timeline and the elevation profile are readable without JavaScript and by search engines. A `ProfilePage` + `Person` JSON-LD links the site to LinkedIn and GitHub.
+**Everything that matters is in the server HTML.** The page is statically rendered. Client JavaScript is limited to the animations (`components/PageEffects.tsx`), the contact form (`components/ContactForm.tsx`) and the BotID check. The figures, the timeline and the elevation profile are readable without JavaScript and by search engines. A `ProfilePage` + `Person` JSON-LD links the site to LinkedIn, GitHub and Malt.
 
 **Share images generated, not drawn.** `opengraph-image` routes render one 1200 × 630 image per language with `next/og`, reusing the site fonts and the same elevation profile. Link previews get their own short description, separate from the search engine one.
 

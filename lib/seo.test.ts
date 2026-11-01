@@ -45,3 +45,8 @@ test("the structured data names the site after the person and links the profile 
     assert.equal(page.mainEntity.url, "https://jeremy-geneste.com/");
   }
 });
+
+test("the structured data ties the person to their public profiles", () => {
+  const [, page] = buildPersonJsonLd("fr", fr)["@graph"];
+  assert.ok(page.mainEntity.sameAs.includes("https://www.malt.fr/profile/jeremygeneste"));
+});
