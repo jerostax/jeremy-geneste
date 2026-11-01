@@ -47,7 +47,7 @@ export const en: Content = {
         { label: "Mobile display time (LCP)", from: 88.7, to: 4, unit: "s" },
       ],
       stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, Apimo API, Playwright.",
-      link: { label: "Visit the site", href: "https://www.delangeimmobilier.com" },
+      link: { label: "Visit delangeimmobilier.com", href: "https://www.delangeimmobilier.com" },
     },
     {
       period: "2019–2024",

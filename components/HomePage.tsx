@@ -142,7 +142,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                         <p className="mt-2 text-sm text-muted">
                           {entry.stack}{" "}
                           {entry.link && (
-                            <a href={entry.link.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-paper">
+                            <a href={entry.link.href} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap underline underline-offset-2 hover:text-paper">
                               {entry.link.label}
                             </a>
                           )}

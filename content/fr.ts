@@ -47,7 +47,7 @@ export const fr: Content = {
         { label: "Affichage sur mobile (LCP)", from: 88.7, to: 4, unit: "s" },
       ],
       stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, API Apimo, Playwright.",
-      link: { label: "Voir le site", href: "https://www.delangeimmobilier.com" },
+      link: { label: "Voir delangeimmobilier.com", href: "https://www.delangeimmobilier.com" },
     },
     {
       period: "2019–2024",
