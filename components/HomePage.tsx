@@ -3,6 +3,7 @@ import { content } from "@/content";
 import type { Figure } from "@/content/types";
 import { buildPersonJsonLd, serializeJsonLd } from "@/lib/seo";
 import { localePath, person, type Locale } from "@/lib/site";
+import { DocumentIcon, GitHubIcon, LinkedInIcon, MaltIcon } from "./Icons";
 import { ContactForm } from "./ContactForm";
 import { ElevationProfile } from "./ElevationProfile";
 import { PageEffects } from "./PageEffects";
@@ -61,11 +62,14 @@ export function HomePage({ locale }: { locale: Locale }) {
             {person.name}
           </h1>
           <p className="enter mt-1.5 text-[17px] text-muted" style={{ "--i": 2 } as React.CSSProperties}>{t.sidebar.role}</p>
-          <p className="enter mt-3 inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[14px] font-medium text-paper" style={{ "--i": 2 } as React.CSSProperties}>
-            <span aria-hidden className="size-2 rounded-full bg-accent" />
-            {t.sidebar.status}
-          </p>
-          <p className="enter mt-2 text-[14px] text-muted" style={{ "--i": 2 } as React.CSSProperties}>{t.sidebar.freelanceStatus}</p>
+          <ul className="enter mt-3 flex flex-col items-start gap-2" style={{ "--i": 2 } as React.CSSProperties}>
+            {[t.sidebar.status, t.sidebar.freelanceStatus].map((status) => (
+              <li key={status} className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[14px] font-medium text-paper">
+                <span aria-hidden className="size-2 rounded-full bg-accent" />
+                {status}
+              </li>
+            ))}
+          </ul>
           <ul className="enter mt-5 text-[15px] leading-[1.9] text-soft" style={{ "--i": 3 } as React.CSSProperties}>
             {t.sidebar.facts.map((fact) => <li key={fact}>{fact}</li>)}
           </ul>
@@ -83,11 +87,11 @@ export function HomePage({ locale }: { locale: Locale }) {
             style={{ "--i": 5 } as React.CSSProperties}>
             {t.sidebar.writeCta}
           </a>
-          <p className="enter mt-3.5 flex flex-wrap gap-x-4.5 gap-y-1 text-[15px]" style={{ "--i": 6 } as React.CSSProperties}>
-            <a href={person.links.linkedin} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">LinkedIn</a>
-            <a href={person.links.github} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">GitHub</a>
-            <a href={person.links.malt} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">Malt</a>
-            {t.sidebar.cvFile && <a href={t.sidebar.cvFile} className="underline underline-offset-2">{t.sidebar.cv}</a>}
+          <p className="enter mt-3.5 flex flex-wrap gap-x-4.5 gap-y-1 text-[15px] lg:grid lg:w-fit lg:grid-cols-[auto_auto] lg:gap-x-6" style={{ "--i": 6 } as React.CSSProperties}>
+            <a href={person.links.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-2"><LinkedInIcon className="size-4 shrink-0" />LinkedIn</a>
+            <a href={person.links.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-2"><GitHubIcon className="size-4 shrink-0" />GitHub</a>
+            <a href={person.links.malt} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-2"><MaltIcon className="size-4 shrink-0" />Malt</a>
+            {t.sidebar.cvFile && <a href={t.sidebar.cvFile} className="inline-flex items-center gap-1.5 underline underline-offset-2"><DocumentIcon className="size-4 shrink-0" />{t.sidebar.cv}</a>}
           </p>
           <p className="enter mt-2.5 text-[15px] text-muted" style={{ "--i": 7 } as React.CSSProperties}>
             <a href={localePath[otherLocale]} hrefLang={otherLocale} lang={otherLocale} className="underline underline-offset-2 hover:text-paper">

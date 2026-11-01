@@ -69,7 +69,7 @@ export type Content = {
     role: string;
     // What I am looking for: shown first, right under the job title.
     status: string;
-    // Secondary availability, shown under the status in a quieter style.
+    // Second availability badge, shown under the status with the same weight.
     freelanceStatus: string;
     facts: string[];
     nav: { parcours: string; projects: string; skills: string; contact: string };
