@@ -38,12 +38,15 @@ export const fr: Content = {
       id: "delange",
       company: "Delange Immobilier",
       role: "Développeur fullstack freelance, Paris",
-      text: "Reprise de l’application immobilière Next.js 15 / React 19 de l’agence, en production. Audit du code (environ 25 problèmes priorisés), sécurité des accès, migration vers les comptes de l’agence sans coupure, référencement et performance.",
+      text: [
+        "Reprise de l’application immobilière Next.js 15 / React 19 de l’agence, en production : audit du code (environ 25 problèmes priorisés), sécurité des accès, migration vers les comptes de l’agence sans coupure, référencement et performance.",
+        "Puis des évolutions métier : les demandes du site arrivent de nouveau dans le CRM de l’agence, avec le bien et l’agent attribué ; affichage légal des honoraires et des mentions de copropriété ; tests de bout en bout Playwright contre un faux CRM.",
+      ],
       figures: [
         { label: "Poids de la page d’accueil", from: 21, to: 3.7, unit: "Mo" },
         { label: "Affichage sur mobile (LCP)", from: 88.7, to: 4, unit: "s" },
       ],
-      stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, API Apimo.",
+      stack: "Next.js, React, TypeScript, Prisma, PostgreSQL, Neon, Vercel, API Apimo, Playwright.",
       link: { label: "Voir le site", href: "https://www.delangeimmobilier.com" },
     },
     {
@@ -65,7 +68,7 @@ export const fr: Content = {
       id: "pop-eye",
       company: "Pop Eye",
       role: "Stage, Station F",
-      text: "Version web du produit mobile de la startup, en React, Next.js et Node.js, avec envoi de fichiers sur AWS.",
+      text: ["Version web du produit mobile de la startup, en React, Next.js et Node.js, avec envoi de fichiers sur AWS."],
     },
     {
       period: "2018–2019",
@@ -101,14 +104,14 @@ export const fr: Content = {
     {
       title: "Développement assisté par IA",
       context: "Projet personnel",
-      text: "Mon environnement Claude Code : agents d’audit de sécurité et de référencement, une checklist outillée exécutée avant les pull requests, garde-fous sur Git et sur les secrets. L’IA propose, je valide.",
-      stack: "Claude Code, Python, MCP",
+      text: "Mon environnement Claude Code : agents d’audit de sécurité et de référencement, une checklist outillée exécutée avant les pull requests, garde-fous sur Git et sur les secrets, et un lien avec Notion pour suivre mes tâches et tenir le client informé. L’IA propose, je valide.",
+      stack: "Claude Code, Python, MCP, API Notion",
     },
   ],
   skills: [
     { label: "Front-end", items: "React, Next.js, TypeScript, JavaScript, Angular, Ionic, Tailwind CSS" },
     { label: "Back-end et données", items: "Node.js, Express, API REST, PostgreSQL, MongoDB, Prisma" },
-    { label: "Cloud et outils", items: "Git, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
+    { label: "Cloud et outils", items: "Git, Playwright, Vercel, Neon, Heroku, IBM Cloud, AWS, Salesforce, Jira, Apimo, Appian" },
   ],
   contact: {
     heading: "Vous recrutez en CDI, ou vous avez besoin d’aide sur un projet ? Écrivez-moi.",
