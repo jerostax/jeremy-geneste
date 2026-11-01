@@ -10,6 +10,7 @@ export function ElevationProfile({ copy, anchors }: { copy: Content["ascent"]; a
   const profile = buildProfile(chamonixToMontBlanc, frame);
   const pins = copy.milestones.map((milestone, i) => ({
     ...milestone,
+    number: i + 1,
     href: milestoneHref(milestone.target, anchors),
     row: i % 2,
     ...profile.pointAt(milestone.at),
@@ -42,6 +43,12 @@ export function ElevationProfile({ copy, anchors }: { copy: Content["ascent"]; a
                 </text>
               </a>
               <circle cx={pin.x} cy={pin.y} r="5" className="ascent-pin fill-ink stroke-muted" strokeWidth="2" />
+              {/* Phones: a numbered badge replaces the hidden label and matches the numbered links below. */}
+              <g aria-hidden className="sm:hidden">
+                <circle cx={Math.min(Math.max(pin.x, 22), frame.width - 22)} cy="22" r="22" className="fill-panel stroke-muted" strokeWidth="2" />
+                <text x={Math.min(Math.max(pin.x, 22), frame.width - 22)} y="22" textAnchor="middle" dominantBaseline="central"
+                  className="fill-paper text-[30px] font-semibold">{pin.number}</text>
+              </g>
             </g>
           );
         })}
@@ -60,6 +67,7 @@ export function ElevationProfile({ copy, anchors }: { copy: Content["ascent"]; a
                   ? "border-accent/50 bg-accent/10 text-paper hover:bg-accent/20"
                   : "border-line bg-panel text-soft hover:border-accent/50 hover:text-paper"
               }`}>
+              <span aria-hidden className="text-[13px] font-semibold text-muted tabular-nums">{pin.number}</span>
               {pin.label}
               <span aria-hidden className="text-accent">↓</span>
             </a>
