@@ -97,7 +97,7 @@ export const fr: Content = {
   projects: [
     {
       title: "SaaS de création de sites par IA",
-      context: "Projet entrepreneurial, avec un Business Analyst",
+      context: "Projet entrepreneurial, avec un Business Analyst, en parallèle depuis janvier 2026",
       text: "Un MVP qui crée des sites professionnels personnalisés pour les petites entreprises : contenus générés par Gemini, templates réutilisables, architecture multi-sites.",
       stack: "Next.js, TypeScript, Prisma, PostgreSQL, Vercel",
     },
