@@ -29,7 +29,7 @@ Personal site of **Jérémy Geneste**, full-stack JavaScript / TypeScript develo
 
 **A logo built from the font, not drawn.** The JG mark is set from the real outlines of Bricolage Grotesque (ExtraBold at optical size 14, legible down to 16 px). `npm run brand` (`scripts/brand/`) derives every asset from those outlines: favicon, iOS icon, monochrome versions, horizontal lockups and the email signatures, so they are identical to the pixel. See `brand/README.md`.
 
-**The resume as code.** `cv/fr.html` and `cv/en.html` are the sources of the downloadable resumes: printed from the browser to one-page A4 PDFs in `public/cv/`, so they are real text (searchable, readable by applicant tracking systems), light, and contain no phone number by construction. See `cv/README.md`.
+**The resume as code.** The downloadable resumes in `public/cv/` are generated from a separate private repository, the single source of the resume: FR and EN content in JSON, a fixed HTML/CSS template, rendered to one-page A4 PDFs with Playwright. They are real text (searchable, readable by applicant tracking systems), and this public variant contains no phone number by construction. Don't edit them here: they are overwritten on the next sync.
 
 ## Project structure
 
@@ -38,7 +38,6 @@ app/            routes: (fr)/ and (en)/en/ root layouts, api/contact, share imag
 components/     page sections, contact form, elevation profile, client-side effects
 content/        typed FR and EN copy
 lib/            pure helpers (contact validation, request guard, rate limit, profile geometry, SEO, security headers) and their tests
-cv/             resume sources (HTML + CSS)
 brand/          generated brand kit (logo variants, favicon, email signatures)
 scripts/brand/  brand kit generator and its tests
 public/         photos, resume PDFs and the signature logo
