@@ -17,7 +17,7 @@ function FigureCard({ figure, locale }: { figure: Figure; locale: string }) {
   const after = formatFigure(figure.to, figure.unit, locale, 1);
   return (
     <div data-figure data-from={figure.from} data-to={figure.to} data-unit={figure.unit}
-      className="rounded-xl bg-panel px-4 pt-3.5 pb-4 text-sm text-muted">
+      className="rounded-xl bg-panel px-4 pt-4 pb-4 text-sm text-muted">
       {figure.label}
       <p className="mt-1 flex items-baseline gap-2">
         {/* The final value is in the HTML; the animation only replays the count-down. */}
@@ -47,7 +47,6 @@ export function HomePage({ locale }: { locale: Locale }) {
     href: `#${sectionIds[key]}`,
     label: t.sidebar.nav[key],
   }));
-  const leadWords = t.lead.split(" ");
 
   return (
     <>
@@ -58,7 +57,7 @@ export function HomePage({ locale }: { locale: Locale }) {
         <aside className="self-start lg:sticky lg:top-10">
           <Image src={person.photo} alt={t.sidebar.photoAlt} width={168} height={168} preload
             className="enter size-[168px] rounded-full object-cover object-[50%_28%]" style={{ "--i": 0 } as React.CSSProperties} />
-          <h1 className="enter mt-5.5 font-display text-4xl font-semibold tracking-[-0.02em]" style={{ "--i": 1 } as React.CSSProperties}>
+          <h1 className="enter mt-6 font-display text-4xl font-semibold tracking-[-0.02em]" style={{ "--i": 1 } as React.CSSProperties}>
             {person.name}
           </h1>
           <p className="enter mt-1.5 text-[17px] text-muted" style={{ "--i": 2 } as React.CSSProperties}>{t.sidebar.role}</p>
@@ -83,17 +82,17 @@ export function HomePage({ locale }: { locale: Locale }) {
               </a>
             ))}
           </nav>
-          <a href="#contact" className="enter mt-6.5 block rounded-lg bg-accent py-3 text-center font-semibold text-ink transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_rgba(111,178,255,0.55)]"
+          <a href="#contact" className="enter mt-6 block rounded-lg bg-accent py-3 text-center font-semibold text-ink transition-colors hover:bg-accent/85"
             style={{ "--i": 5 } as React.CSSProperties}>
             {t.sidebar.writeCta}
           </a>
-          <p className="enter mt-3.5 flex flex-wrap gap-x-4.5 gap-y-1 text-[15px] lg:grid lg:w-fit lg:grid-cols-[auto_auto] lg:gap-x-6" style={{ "--i": 6 } as React.CSSProperties}>
+          <p className="enter mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[15px] lg:grid lg:w-fit lg:grid-cols-[auto_auto] lg:gap-x-6" style={{ "--i": 6 } as React.CSSProperties}>
             <a href={person.links.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-2"><LinkedInIcon className="size-4 shrink-0" />LinkedIn</a>
             <a href={person.links.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-2"><GitHubIcon className="size-4 shrink-0" />GitHub</a>
             <a href={person.links.malt} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 underline underline-offset-2"><MaltIcon className="size-4 shrink-0" />Malt</a>
             {t.sidebar.cvFile && <a href={t.sidebar.cvFile} className="inline-flex items-center gap-1.5 underline underline-offset-2"><DocumentIcon className="size-4 shrink-0" />{t.sidebar.cv}</a>}
           </p>
-          <p className="enter mt-2.5 text-[15px] text-muted" style={{ "--i": 7 } as React.CSSProperties}>
+          <p className="enter mt-3 text-[15px] text-muted" style={{ "--i": 7 } as React.CSSProperties}>
             <a href={localePath[otherLocale]} hrefLang={otherLocale} lang={otherLocale} className="underline underline-offset-2 hover:text-paper">
               {t.sidebar.switchLanguage}
             </a>
@@ -102,14 +101,9 @@ export function HomePage({ locale }: { locale: Locale }) {
 
         <main>
           <p className="max-w-[24ch] font-display text-[clamp(1.9rem,3.2vw,2.9rem)] leading-[1.12] font-semibold tracking-[-0.025em]">
-            {leadWords.map((word, i) => (
-              <span key={i}>
-                <span className="lead-word" style={{ "--i": i } as React.CSSProperties}>{word}</span>
-                {i < leadWords.length - 1 && " "}
-              </span>
-            ))}
+            {t.lead}
           </p>
-          <p className="enter-late mt-4.5 max-w-[56ch] text-[17px] leading-relaxed text-muted">{t.now}</p>
+          <p className="mt-5 max-w-[56ch] text-[17px] leading-relaxed text-muted">{t.now}</p>
 
           <section aria-labelledby={sectionIds.parcours} className="mt-14">
             <SectionTitle id={sectionIds.parcours}>{t.sections.parcours}</SectionTitle>
@@ -117,12 +111,12 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div>
               <ol>
                 {t.timeline.map((entry) => (
-                  <li key={entry.id} id={entry.id} className="scroll-mt-8 grid gap-1 border-b border-line py-5.5 lg:grid-cols-[110px_1fr] lg:gap-6">
+                  <li key={entry.id} id={entry.id} className="scroll-mt-8 grid gap-1 border-b border-line py-6 lg:grid-cols-[110px_1fr] lg:gap-6">
                     <span className="pt-0.5 text-[15px] text-muted tabular-nums">{entry.period}</span>
                     <div>
                       <h3 className="text-xl font-semibold tracking-[-0.01em]">{entry.company}</h3>
                       <p className="mt-0.5 text-[15px] text-muted">{entry.role}</p>
-                      {entry.text?.map((paragraph) => <p key={paragraph} className="mt-2.5 max-w-[64ch] leading-relaxed text-soft">{paragraph}</p>)}
+                      {entry.text?.map((paragraph) => <p key={paragraph} className="mt-3 max-w-[64ch] leading-relaxed text-soft">{paragraph}</p>)}
                       {entry.figures && (
                         <div className="mt-4 grid max-w-[560px] gap-3 sm:grid-cols-2">
                           {entry.figures.map((figure) => <FigureCard key={figure.label} figure={figure} locale={t.numberLocale} />)}
@@ -158,10 +152,10 @@ export function HomePage({ locale }: { locale: Locale }) {
           <section aria-labelledby={sectionIds.projects} className="mt-14">
             <SectionTitle id={sectionIds.projects}>{t.sections.projects}</SectionTitle>
             {t.projects.map((project) => (
-              <article key={project.title} className="border-b border-line py-5.5">
+              <article key={project.title} className="border-b border-line py-6">
                 <h3 className="text-xl font-semibold tracking-[-0.01em]">{project.title}</h3>
                 <p className="mt-0.5 text-[15px] text-muted">{project.context}</p>
-                <p className="mt-2.5 max-w-[64ch] leading-relaxed text-soft">{project.text}</p>
+                <p className="mt-3 max-w-[64ch] leading-relaxed text-soft">{project.text}</p>
                 <p className="mt-2 text-sm text-muted">{project.stack}</p>
               </article>
             ))}
@@ -169,11 +163,11 @@ export function HomePage({ locale }: { locale: Locale }) {
 
           <section aria-labelledby={sectionIds.skills} className="mt-14">
             <SectionTitle id={sectionIds.skills}>{t.sections.skills}</SectionTitle>
-            <dl className="grid gap-x-6 pt-4.5 sm:grid-cols-[170px_1fr] sm:gap-y-3">
+            <dl className="grid gap-x-6 pt-5 sm:grid-cols-[170px_1fr] sm:gap-y-3">
               {t.skills.map((group) => (
                 <div key={group.label} className="contents">
                   <dt className="text-[15px] text-muted">{group.label}</dt>
-                  <dd className="mb-2.5 text-soft sm:mb-0">{group.items}</dd>
+                  <dd className="mb-3 text-soft sm:mb-0">{group.items}</dd>
                 </div>
               ))}
             </dl>
@@ -191,7 +185,7 @@ export function HomePage({ locale }: { locale: Locale }) {
 
           <section aria-labelledby={sectionIds.contact} className="mt-14">
             <SectionTitle id={sectionIds.contact}>{t.sections.contact}</SectionTitle>
-            <p className="mt-4.5 max-w-[34ch] font-display text-[clamp(1.4rem,2.2vw,1.9rem)] leading-snug font-semibold tracking-[-0.01em]">
+            <p className="mt-5 max-w-[34ch] font-display text-[clamp(1.4rem,2.2vw,1.9rem)] leading-snug font-semibold tracking-[-0.01em]">
               {t.contact.heading}
             </p>
             <p className="mt-3 text-[15px] text-soft">

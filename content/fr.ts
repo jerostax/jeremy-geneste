@@ -12,7 +12,7 @@ export const fr: Content = {
   sidebar: {
     role: "Développeur fullstack JavaScript et IA",
     status: "En recherche d’un CDI à Paris",
-    freelanceStatus: "Disponible pour des missions freelance",
+    freelanceStatus: "Disponible en freelance",
     facts: ["Île-de-France", "Développeur depuis 2019", "Français, anglais professionnel"],
     nav: { parcours: "Parcours", projects: "Projets", skills: "Compétences", contact: "Contact" },
     navLabel: "Sections de la page",

@@ -67,7 +67,7 @@ export function ContactForm({ copy, email }: { copy: FormCopy; email: string }) 
     ) : null;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="mt-6 grid max-w-2xl gap-3.5 sm:grid-cols-2">
+    <form onSubmit={onSubmit} noValidate className="mt-6 grid max-w-2xl gap-4 sm:grid-cols-2">
       <label className="flex flex-col gap-1.5 text-sm text-muted">
         {copy.name}
         <input name="name" autoComplete="name" maxLength={limits.name} className={inputClass}
@@ -94,7 +94,7 @@ export function ContactForm({ copy, email }: { copy: FormCopy; email: string }) 
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="absolute -left-[9999px]" />
       <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
         <button type="submit" disabled={status === "sending"}
-          className="cursor-pointer rounded-lg bg-accent px-5.5 py-3 font-semibold text-ink transition hover:-translate-y-0.5 disabled:cursor-progress disabled:opacity-60 disabled:hover:translate-y-0">
+          className="cursor-pointer rounded-lg bg-accent px-6 py-3 font-semibold text-ink transition-colors hover:bg-accent/85 disabled:cursor-progress disabled:opacity-60 disabled:hover:bg-accent">
           {status === "sending" ? copy.sending : copy.submit}
         </button>
         <span className="text-sm text-muted">

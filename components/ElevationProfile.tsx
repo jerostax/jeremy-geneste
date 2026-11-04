@@ -17,7 +17,7 @@ export function ElevationProfile({ copy, anchors }: { copy: Content["ascent"]; a
   }));
   const start = profile.pointAt(0);
   return (
-    <figure className="mt-5.5" aria-label={copy.label}>
+    <figure className="mt-6" aria-label={copy.label}>
       <svg data-ascent viewBox={`0 0 ${frame.width} ${frame.height}`} className="block h-auto w-full overflow-visible text-accent">
         <defs>
           <linearGradient id="ascent-fill" x1="0" y1="0" x2="0" y2="1">
